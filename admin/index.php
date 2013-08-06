@@ -63,13 +63,13 @@ function nbrTotalFolder($Directory){
 <html lang="fr" dir="ltr">
 <head>
 	<meta charset="utf-8">
-	<title>Bienvenue sur Tabac info service - La home</title>
+	<title><?php echo $meta["title"]; ?></title>
 	<?php if($checker == 2){ ?>
 		<link rel="stylesheet" href="../css/ga.css">
 	<?php }else{ ?>
 		<link rel="stylesheet" href="../css/init.css">
 	<?php } ?>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" id="favicon">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" id="favicon">
 </head>
 <body>
 	<div class="content">
@@ -90,6 +90,7 @@ function nbrTotalFolder($Directory){
 
 		<div id="dropArea">
 			Déplacer ici les images que tu souhaites mettre en ligne
+			 (pas plus de 15 à la fois)
 		</div>
 		<canvas width="800" height="30"></canvas>
 

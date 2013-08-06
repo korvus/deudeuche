@@ -44,14 +44,20 @@ $arrayBack = display($folderToCrawl,$toShow);
 	<title><?php echo $meta["title"]; ?></title>
 	<link rel="stylesheet" href="css/g.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" id="favicon">
-	<link rel="Shortcut Icon" type="image/x-icon" href="http://annuaireblogbd.com/favicon.ico" />
 </head>
 <body>
 	<div class="content">
 
-
 		<h1>
-			<a href="/blogs/corvus/">
+			<?php
+				$p = explode("/",$_SERVER["REQUEST_URI"]);
+				$bth = "";
+				for($a=1; $a<count($p)-1; $a++){
+					$bth = $bth."/".$p[$a];
+				}
+			?>
+
+			<a href="<?php echo $bth."/"; ?>">
 				<?php echo $arrayBack["ttl"]; ?>
 			</a>
 		</h1>
