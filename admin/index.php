@@ -2,6 +2,20 @@
 
 include "init.php";
 
+/* Seulement valable sur les pages front */
+function getGInfos(){
+	if(file_exists("../caracts.json")){
+		$meta = file_get_contents("../caracts.json");
+		$metaDD = json_decode($meta);
+		$met = array("title"=>$metaDD->metattl,"desc"=>$metaDD->metadesc,"init"=>1);
+	}else{
+		$met = array("title"=>"Deudeuche","desc"=>"Ce blog est en cours de construction","init"=>0);
+	}
+	return $met;
+}
+
+$meta = getGInfos();
+
 $folderToCrawl = '../i';
 
 function ScanDirectory($Directory){
@@ -20,7 +34,8 @@ function ScanDirectory($Directory){
 				if($Entry == "meta.json"){
 					$json = file_get_contents("$Directory/meta.json");
 					$dataI = json_decode($json);
-					$p3 = "<input class='title' data-initial='".$dataI->ttl."' value='".$dataI->ttl."' />";
+					$ind = substr($Directory,-1);
+					$p3 = "<input tabindex='$ind' class='title' data-initial='".$dataI->ttl."' value='".$dataI->ttl."' />";
 					$p2 = "<span>Le ".date('d/m/Y',$dataI->quand)."</span>";
 				}else{
 					$folder = explode("/",$Directory);
