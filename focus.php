@@ -29,7 +29,12 @@ function display($directory,$toGet){
 			}
 		}
 	}
-	$arrFb = array("ttl" => $dataI->ttl,"img" => $img);
+	if(get_magic_quotes_gpc() == 1){
+		$ttl = stripslashes($dataI->ttl);
+	}else{
+		$ttl = $dataI->ttl;
+	}
+	$arrFb = array("ttl" => $ttl,"img" => $img);
 	return $arrFb;
 }
 
@@ -58,7 +63,9 @@ $arrayBack = display($folderToCrawl,$toShow);
 			?>
 
 			<a href="<?php echo $bth."/"; ?>">
-				<?php echo $arrayBack["ttl"]; ?>
+				<?php
+					echo $arrayBack["ttl"];
+				?>
 			</a>
 		</h1>
 

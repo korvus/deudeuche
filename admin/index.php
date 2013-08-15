@@ -35,7 +35,8 @@ function ScanDirectory($Directory){
 					$json = file_get_contents("$Directory/meta.json");
 					$dataI = json_decode($json);
 					$ind = substr($Directory,-1);
-					$p3 = "<input tabindex='$ind' class='title' data-initial='".$dataI->ttl."' value='".$dataI->ttl."' />";
+					$ttl = stripslashes(htmlspecialchars($dataI->ttl, ENT_QUOTES));
+					$p3 = "<input tabindex='$ind' class='title' data-initial='$ttl' value='$ttl' />";
 					$p2 = "<span>Le ".date('d/m/Y',$dataI->quand)."</span>";
 				}else{
 					$folder = explode("/",$Directory);
@@ -97,9 +98,9 @@ function nbrTotalFolder($Directory){
 		?>
 
 		<h1>
-			Admin
-			<span id="count">0 upload en cours.</span>
+			<a href="../">◄ Retour sur le blog</a>
 		</h1>
+		<span id="count">0 upload en cours.</span>
 
 		<input type="hidden" id="url" value="../upload.php"/>
 
