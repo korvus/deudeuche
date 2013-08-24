@@ -1,21 +1,24 @@
 <?php
 
-function setDirSuperior($parentDir,$toSet,$toCheck){
-    if(is_dir($parentDir.$toCheck)){
-    	//echo "il y a bien un dossier ".$toCheck;
+define('ROOT', realpath(__DIR__.'/..'));
+
+function setDirSuperior($toSet,$toCheck){
+	//echo $toSet." _ ".$toCheck."\n";
+    if(is_dir(ROOT."/i/".$toCheck)){
         usleep(1);
-        rename($parentDir.$toCheck, $parentDir.$toSet);
+        rename(ROOT."/i/".$toCheck, ROOT."/i/".$toSet);
     }else{
         if($toCheck<20){
-            setDirSuperior($parentDir,$toSet,$toCheck+1);
+            setDirSuperior($toSet,$toCheck+1);
         }
     }
 }
 
-function checkIfAllisFine($parentDir,$nbrFolder){
+function checkIfAllisFine($nbrFolder){
     for($j=1;$j <= $nbrFolder;$j++){
-        if(!is_dir("i/".$j)){
-            setDirSuperior($parentDir,$j,$j+1);
+    	//echo ROOT."/i/$j\n";
+        if(!file_exists(ROOT."/i/$j")){
+            setDirSuperior($j,$j+1);
         }
     }
 }

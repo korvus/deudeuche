@@ -13,7 +13,7 @@ h2{margin:50px 0 0 0;}
 h1{margin:10px 0 0 0;}
 h1 a{text-decoration:none;color:#000;}
 
-.s{border:1px solid #666;padding:10px;margin:10px 0;text-align:center;}
+.s{border:1px solid #666;padding:10px;margin:10px 0;text-align:center;overflow:auto;}
 
 .content{width:800px;margin:0 auto;}
 

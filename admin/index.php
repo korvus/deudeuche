@@ -34,7 +34,8 @@ function ScanDirectory($Directory){
 				if($Entry == "meta.json"){
 					$json = file_get_contents("$Directory/meta.json");
 					$dataI = json_decode($json);
-					$ind = substr($Directory,-1);
+					$tabindex = explode("/",$Directory);
+					$ind = end($tabindex);
 					$ttl = stripslashes(htmlspecialchars($dataI->ttl, ENT_QUOTES));
 					$p3 = "<input tabindex='$ind' class='title' data-initial='$ttl' value='$ttl' />";
 					$p2 = "<span>Le ".date('d/m/Y',$dataI->quand)."</span>";
@@ -102,7 +103,7 @@ function nbrTotalFolder($Directory){
 		</h1>
 		<span id="count">0 upload en cours.</span>
 
-		<input type="hidden" id="url" value="../upload.php"/>
+		<input type="hidden" id="url" value="upload.php"/>
 
 		<div id="dropArea">
 			Déplacer ici les images que tu souhaites mettre en ligne
@@ -147,8 +148,8 @@ function nbrTotalFolder($Directory){
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <?php if($checker == 2){ ?>
-	<script type="text/javascript" src="../js/drag.js"></script>
-	<script type="text/javascript" src="../js/admin.js"></script>
+	<script type="text/javascript" src="js/drag.js"></script>
+	<script type="text/javascript" src="js/admin.js"></script>
 <?php }else{ ?>
 	<script type="text/javascript" src="../js/init.js"></script>
 <?php } ?>

@@ -1,3 +1,9 @@
+function reinitTI(){
+	$(".all li").each(function(ind){
+		$(this).attr("data-rel",ind+1);
+	})
+}
+
 $(function(){
 
  	$(".all").sortable({
@@ -57,14 +63,12 @@ $(function(){
 		var numb = elt.attr("data-rel");
 		var numbElts = elt.parent().find("li:last-child").attr("data-rel");
 		$.post(
-			"../php/ajax-toSuppress.php",
+			"php/ajax-toSuppress.php",
 			{idblog:numb,total:numbElts},
 			function(){
 				elt.slideUp("slow",function(){
 					elt.remove();
-					$(".all li").each(function(ind){
-						$(this).attr("data-rel",ind+1);
-					})
+					reinitTI();
 				});
 			}
 		);

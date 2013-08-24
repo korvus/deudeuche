@@ -3,7 +3,7 @@
 // fixe le niveau de rapport d'erreur
 //echo phpversion();
 
-include "php/functions.php";
+include "../php/functions.php";
 
 if (version_compare(phpversion(), '5.3.0', '>=') == 1)
   error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
@@ -36,7 +36,7 @@ if (isset($_FILES['myfile'])){
 
 function getAnewId($ti){
     $ti++;
-    if(is_dir("i/".$ti)){
+    if(is_dir("../i/".$ti)){
         return getAnewId($ti);
     }else{
         return $ti;
@@ -52,7 +52,7 @@ $name = $_FILES["pictures"]["name"][$key];
 // lisiting de tous les fichiers
 $tableau="";
 $nbrFolder=0;
-$handle=@opendir("i"); // Chemin du dossier
+$handle=@opendir("../i"); // Chemin du dossier
 while($fichier = @readdir($handle)){
     if($fichier!="." && $fichier!=".."){
         $listing[$fichier]=$nbrFolder;
@@ -61,17 +61,17 @@ while($fichier = @readdir($handle)){
 } // Fin du while
 $nbrFolder = ($nbrFolder-1); // Cette variable contient le nombre de fichiers du dossier
 
-checkIfAllisFine("i/",$nbrFolder);
+checkIfAllisFine("../i/","../i/",$nbrFolder);
 
-if(mkdir("i/".$nbrFolder, 0777)){
+if(mkdir(ROOT."/i/".$nbrFolder, 0777)){
     echo "<img src='../i/$nbrFolder/$sFileName' /></div>";
-    move_uploaded_file($sFileTmp, "i/$nbrFolder/$sFileName");
+    move_uploaded_file($sFileTmp, "../i/$nbrFolder/$sFileName");
 
     $metaTime = time();
     $arr = array('quand' => $metaTime, 'ttl' => $ttl,'legend' => "");
     $toWrite = json_encode($arr);
     $file = "file".$nomFile.".json";
-    $handle = fopen("i/$nbrFolder/meta.json", "w+");
+    $handle = fopen("../i/$nbrFolder/meta.json", "w+");
     fwrite($handle, $toWrite);
     fclose($handle);
 
