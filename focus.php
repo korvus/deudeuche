@@ -72,15 +72,15 @@ $arrayBack = display($folderToCrawl,$toShow);
 		<div class="show">
 			<?php
 				if($toShow == 1){
-					echo "<nav class='inactive prev'>◄</nav>";
+					echo "<nav class='inactive prev'><span>◄</span></nav>";
 				}else{
-					echo "<a href='".($toShow-1)."' target='_self' class='nav prev'>◄</a>";
+					echo "<a href='".($toShow-1)."' target='_self' class='nav prev'><span>◄</span></a>";
 				}
 
 				if($toShow == $totalNumber){
-					echo "<nav class='inactive next'>►</nav>";
+					echo "<nav class='inactive next'><span>►</span></nav>";
 				}else{
-					echo "<a href='".($toShow+1)."' target='_self' class='nav next'>►</a>";
+					echo "<a href='".($toShow+1)."' target='_self' class='nav next'><span>►</span></a>";
 				}
 
 				echo "<img src='".$arrayBack['img']."' title='".$arrayBack['ttl']."' />"
