@@ -1,6 +1,18 @@
 <?php
 
-define('ROOT', realpath(__DIR__.'/..'));
+if(@__DIR__ == '__DIR__'){
+	$filename = $_SERVER["SCRIPT_FILENAME"];
+	$splitedPath = explode("/",$filename);
+	$current = count($splitedPath)-1;
+	$path = "";
+	for($i=1 ; $i<$current-2 ; $i++){
+		if($splitedPath[$i]=="php"){$splitedPath[$i]="";}
+		$path = $path."/".$splitedPath[$i];
+	}
+	define('ROOT', $path);
+}else{
+    define('ROOT', realpath(__DIR__.'/..'));
+}
 
 function setDirSuperior($toSet,$toCheck){
 	//echo $toSet." _ ".$toCheck."\n";
