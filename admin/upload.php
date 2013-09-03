@@ -63,7 +63,7 @@ $nbrFolder = ($nbrFolder-1); // Cette variable contient le nombre de fichiers du
 
 checkIfAllisFine("../i/","../i/",$nbrFolder);
 
-if(mkdir(ROOT."/i/".$nbrFolder, 0777)){
+if(mkdir("../i/".$nbrFolder, 0777)){
     echo "<img src='../i/$nbrFolder/$sFileName' /></div>";
     move_uploaded_file($sFileTmp, "../i/$nbrFolder/$sFileName");
 
