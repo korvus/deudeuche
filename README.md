@@ -21,7 +21,7 @@ et uploader-le sur votre serveur, dans le dossier de votre choix.
 Ensuite, rendez vous a la racine du répertoire dans lequel vous l'avez téléchargé, 
 et suivez simplement les instructions qui s'afficheront automatiquement :
 * [étape 1](http://simonertel.net/dossiers/deudeuche/6 "première page de déploiement du CMS") 
-* [étape 2](http://simonertel.net/dossiers/deudeuche/7 "deuxième page de déploiement du CMS"))
+* [étape 2](http://simonertel.net/dossiers/deudeuche/7 "deuxième page de déploiement du CMS")
 
 ###démo et explications des fonctionalités :
 
