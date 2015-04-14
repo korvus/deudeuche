@@ -1,7 +1,7 @@
 Deudeuche : qu'est ce que c'est ?
 =================================
 
-![Logo Deudeuche](http://simonertel.net/dossiers/deudeuche/i/4/ex4.png)
+![Logo Deudeuche](http://simonertel.net/demo/deudeuche/i/4/ex4.png)
 
 Deudeuche est un CMS en PHP, javascript, HTML & CSS qui permet de créer facilement un blog pour poster des images 
 (png/gif/jpg), sans superflu.
@@ -16,23 +16,21 @@ Car métaphoriquement, on retrouve ces points communs :
 
 ###Déploiement
 
-Télécharger [Deudeuche](https://github.com/korvus08/deudeuche/archive/master.zip "Dépôt Github"), 
+Télécharger [Deudeuche](https://github.com/korvus/deudeuche/archive/master.zip "Dépôt Github"), 
 et uploader-le sur votre serveur, dans le dossier de votre choix. 
 Ensuite, rendez vous a la racine du répertoire dans lequel vous l'avez téléchargé, 
 et suivez simplement les instructions qui s'afficheront automatiquement :
-* [étape 1](http://simonertel.net/dossiers/deudeuche/6 "première page de déploiement du CMS") 
-* [étape 2](http://simonertel.net/dossiers/deudeuche/7 "deuxième page de déploiement du CMS")
+* [étape 1](http://simonertel.net/demo/deudeuche/i/6/init1.png "première page de déploiement du CMS") 
+* [étape 2](http://simonertel.net/dossiers/deudeuche/i/7/init2.png "deuxième page de déploiement du CMS")
 
 ###démo et explications des fonctionalités :
 
-[démo avec un peu de texte ajouté en dur.](http://simonertel.net/dossiers/deudeuche/ "blog de démonstration")
+[démo avec un peu de texte ajouté en dur.](http://simonertel.net/demo/deudeuche/ "blog de démonstration")
 
 ###Remerciement / modules utilisés :
 
 * [jquery et jquery ui, hosté par google](https://developers.google.com/speed/libraries/devguide?hl=fr "jquery")
 * [Tutoriel employé](http://script-tutorials.developpez.com/tutoriels/html5/drag-drop-file-upload-html5/ "script utilisé")
-* [pour aides et avis extérieur : bpierre](https://github.com/bpierre "Son compte github")
-
 
 ###Contact
 
